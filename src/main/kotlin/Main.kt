@@ -17,7 +17,7 @@ fun main() {
         repost = null,
         views = 15,
         postType = "",
-        attachments = null,
+        attachments = emptyArray(),
         signerId = 0,
         canPin = false,
         canDelete = false,
@@ -115,7 +115,7 @@ fun main() {
         repost = null,
         views = 154,
         postType = "",
-        attachments = null,
+        attachments = emptyArray(),
         signerId = 0,
         canPin = false,
         canDelete = false,
@@ -130,7 +130,7 @@ fun main() {
     WallService.add(thirdPost)
 
     WallService.update(updatedPost)
-    println(WallService.update(updatedPost))
 
     WallService.printPosts()
+    println(WallService.update(updatedPost))
 }

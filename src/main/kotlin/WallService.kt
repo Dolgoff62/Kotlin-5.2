@@ -12,35 +12,15 @@ object WallService {
 
     fun update(post: Post): Boolean {
 
-        for (searchPost in posts) {
+        for( i in 0..posts.size) {
+            val searchPost = posts[i]
             if (post.id == searchPost.id) {
-                val updatedPost = Post(
-                    searchPost.id,
-                    searchPost.ownerId,
-                    post.fromId,
-                    post.createdBy,
-                    searchPost.date,
-                    post.text,
-                    post.replyOwnerId,
-                    post.replyPostId,
-                    post.friendsOnly,
-                    post.comments,
-                    post.copyright,
-                    post.likes,
-                    post.repost,
-                    post.views,
-                    post.postType,
-                    post.attachments,
-                    post.signerId,
-                    post.canPin,
-                    post.canDelete,
-                    post.canEdit,
-                    post.isPinned,
-                    post.markedAsAds,
-                    post.isFavorite,
-                    post.postponedId
-                )
-                posts[posts.indexOf(searchPost)] = updatedPost
+                val updatedPost = post.copy()
+                updatedPost.id = searchPost.id
+                updatedPost.ownerId = searchPost.ownerId
+                updatedPost.date = searchPost.date
+
+                posts[i] = updatedPost
                 return true
             }
         }
@@ -50,6 +30,17 @@ object WallService {
     fun printPosts() {
         for ((index, value) in posts.withIndex()) {
             println("Значение индекса $index содержимое $value")
+            println("\tвложения:")
+            for (att: Attachment in value.attachments) {
+                when(att.type) {
+                    "Note" -> println("\t\tNote")
+                    "Photo" -> println("\t\tPhoto")
+                    "Document" -> println("\t\tDocument")
+                    "Audio" -> println("\t\tAudio")
+                    "Video" -> println("\t\tVideo")
+                    else -> println("\t\tunknown")
+                }
+            }
         }
     }
 }

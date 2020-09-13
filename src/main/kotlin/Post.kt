@@ -2,10 +2,10 @@ package ru.netology
 
 data class Post(
     internal var id: Int = 0,
-    val ownerId: Int,
+    internal var ownerId: Int,
     val fromId: Int,
     val createdBy: Int,
-    val date: Int,
+    internal var date: Int,
     val text: String,
     val replyOwnerId: Int,
     val replyPostId: Int,
@@ -16,7 +16,7 @@ data class Post(
     val repost: Post?,
     val views: Int,
     val postType: String,
-    val attachments: Array<Any>?,
+    val attachments: Array<Attachment>,
     val signerId: Int,
     val canPin: Boolean,
     val canDelete: Boolean,
@@ -24,5 +24,5 @@ data class Post(
     val isPinned: Boolean,
     val markedAsAds: Boolean,
     val isFavorite: Boolean,
-    val postponedId: Int
+    val postponedId: Int,
 )

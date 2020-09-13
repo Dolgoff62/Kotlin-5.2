@@ -1,5 +1,6 @@
 import org.junit.Test
 import ru.netology.WallService
+import ru.netology.Photo
 import org.junit.Assert.*
 import ru.netology.Post
 
@@ -24,7 +25,7 @@ class WallServiceTest {
             repost = null,
             views = 15,
             postType = "",
-            attachments = null,
+            attachments = emptyArray(),
             signerId = 0,
             canPin = false,
             canDelete = false,
@@ -56,7 +57,7 @@ class WallServiceTest {
             repost = null,
             views = 15,
             postType = "",
-            attachments = null,
+            attachments = emptyArray(),
             signerId = 0,
             canPin = false,
             canDelete = false,
@@ -83,7 +84,7 @@ class WallServiceTest {
             repost = null,
             views = 154,
             postType = "",
-            attachments = null,
+            attachments = arrayOf(Photo(123, 321, 999, 12, "Collage", 2020_05_12)),
             signerId = 0,
             canPin = false,
             canDelete = false,
@@ -117,7 +118,7 @@ class WallServiceTest {
             repost = null,
             views = 15,
             postType = "",
-            attachments = null,
+            attachments = emptyArray(),
             signerId = 0,
             canPin = false,
             canDelete = false,
@@ -130,7 +131,7 @@ class WallServiceTest {
 
 
         val update = Post(
-            id = 5,
+            id = 1,
             ownerId = 555,
             fromId = 12,
             createdBy = 567,
@@ -145,7 +146,7 @@ class WallServiceTest {
             repost = null,
             views = 154,
             postType = "",
-            attachments = null,
+            attachments = emptyArray(),
             signerId = 0,
             canPin = false,
             canDelete = false,
@@ -157,7 +158,6 @@ class WallServiceTest {
 
         val result = WallService.update(update)
 
-        assertFalse(result)
-
+        assertFalse(!result)
     }
 }
