@@ -132,5 +132,4 @@ fun main() {
     WallService.update(updatedPost)
 
     WallService.printPosts()
-    println(WallService.update(updatedPost))
 }

@@ -12,7 +12,7 @@ object WallService {
 
     fun update(post: Post): Boolean {
 
-        for( i in 0..posts.size) {
+        for( i: Int in 0..posts.size) {
             val searchPost = posts[i]
             if (post.id == searchPost.id) {
                 val updatedPost = post.copy()
