@@ -16,7 +16,7 @@ data class Post(
     val repost: Post?,
     val views: Int,
     val postType: String,
-    val attachments: Array<Attachment>,
+    val attachments: List<Attachment>,
     val signerId: Int,
     val canPin: Boolean,
     val canDelete: Boolean,

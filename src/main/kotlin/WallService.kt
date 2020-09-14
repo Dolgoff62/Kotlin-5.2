@@ -1,12 +1,12 @@
 package ru.netology
 
 object WallService {
-    private var posts = emptyArray<Post>()
+    private var posts = mutableListOf<Post>()
     private var lastId = 1
 
     fun add(post: Post): Post {
         post.id = lastId++
-        posts += post
+        posts.plusAssign(post)
         return posts.last()
     }
 
@@ -21,6 +21,7 @@ object WallService {
                 updatedPost.date = searchPost.date
 
                 posts[i] = updatedPost
+
                 return true
             }
         }
