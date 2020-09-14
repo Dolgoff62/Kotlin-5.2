@@ -17,7 +17,7 @@ fun main() {
         repost = null,
         views = 15,
         postType = "",
-        attachments = emptyArray(),
+        attachments = emptyList(),
         signerId = 0,
         canPin = false,
         canDelete = false,
@@ -43,7 +43,7 @@ fun main() {
         repost = null,
         views = 0,
         postType = "",
-        attachments = arrayOf(
+        attachments = listOf(
             Note(
                 1,
                 123,
@@ -85,7 +85,7 @@ fun main() {
         repost = null,
         views = 15,
         postType = "",
-        attachments = arrayOf(Photo(123, 321, 999, 12, "Collage", 2020_05_12),
+        attachments = listOf<Attachment>(Photo(123, 321, 999, 12, "Collage", 2020_05_12),
             Video(21, 333, "Monkey Island", "Funny movie", 312, 2020_01_01, 100),
             Note(999, 123, "Some Note", "my first note", 2020_03_01, 0)
         ),
@@ -100,7 +100,7 @@ fun main() {
     )
 
     val updatedPost = Post(
-        id = 1,
+        id = 3,
         ownerId = 555,
         fromId = 12,
         createdBy = 567,
@@ -115,7 +115,7 @@ fun main() {
         repost = null,
         views = 154,
         postType = "",
-        attachments = emptyArray(),
+        attachments = emptyList(),
         signerId = 0,
         canPin = false,
         canDelete = false,
